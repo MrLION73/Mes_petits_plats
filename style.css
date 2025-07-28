@@ -1,0 +1,223 @@
+    /* Styles existants pour galerie */
+    .gallery-item {
+      width: calc(33% - 1rem);
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.03);
+    }
+
+    .plate-title {
+      font-weight: bold;
+      margin-top: 0.5rem;
+      color: #2f5532;
+    }
+
+    .plate-desc {
+      font-size: 0.9rem;
+      color: #4f734f;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-item {
+        width: 100%;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #e6f4e6;
+      color: #2e4d2e;
+      background-image: url('https://www.transparenttextures.com/patterns/leaf.png');
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #c8e6c9;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .day {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      border-top: 1px solid #a8d5a8;
+    }
+
+    .day:first-child {
+      border-top: none;
+    }
+
+    .day-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #3b5e3b;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Lignes latérales */
+    .left-line, .right-line {
+      position: fixed;
+      top: 0;
+      height: 100vh;
+      width: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .left-line {
+      left: 0;
+      background: linear-gradient(to bottom, #2e7d32 0%, #81c784 100%);
+      border-left: 3px solid #2e7d32;
+    }
+
+    .right-line {
+      right: 0;
+      background: linear-gradient(to bottom, #388e3c 0%, #a5d6a7 100%);
+      border-right: 3px solid #388e3c;
+    }
+
+/* Fourches à gauche */
+.left-fork {
+  position: relative;
+  width: 20px;
+  height: 60px;
+}
+
+.left-fork::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 2px;
+  height: 80px;
+  background-color: #026300;
+  transform: translateX(-10%);
+}
+
+.left-fork .branch {
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  width: 20px;
+  height: 2px;
+  background-color: #026300;
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+
+/* Fourches à droite */
+.right-fork {
+  position: relative;
+  width: 20px;
+  height: 60px;
+}
+
+.right-fork::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 90%;
+  width: 2px;
+  height: 80px;
+  background-color: #026300;
+  transform: translateX(-90%);
+}
+
+.right-fork .branch {
+  position: absolute;
+  top: 10px;
+  left: 90%;
+  width: 20px;
+  height: 2px;
+  background-color: #026300;
+  transform: rotate(135deg);
+  transform-origin: left center;
+}
+
+/* Feuille commune (base) */
+.branch .leaf {
+  position: absolute;
+  top: -8px;
+  width: 16px;
+  height: 16px;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23026300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8 6 4 12 12 22c8-10 4-16 0-20z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Feuille à droite : vers le haut ou haut-gauche */
+.right-fork .right-leaf {
+  left: 80%;
+  top: -6px;
+  transform: rotate(110deg); /* à ajuster selon effet désiré */
+}
+
+/* Feuille à gauche : vers le haut ou haut-droite */
+.left-fork .left-leaf {
+  left: 80%;
+  transform: rotate(70deg); /* à ajuster aussi */
+}
+
+.navbar {
+  padding: 1rem 0;
+  background: linear-gradient(to bottom, #c8e6c9 0%, #e6f4e6 100%);
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #2e4d2e;
+  font-weight: bold;
+  border: 2px solid #2e7d32;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: #e8f5e9;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #c8e6c9;
+}
